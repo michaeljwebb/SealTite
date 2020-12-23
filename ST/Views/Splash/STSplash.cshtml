@@ -1,0 +1,129 @@
+﻿
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    
+  <div id="page-wrapper">
+    <div id="page">
+
+          <div id="header" class="without-secondary-menu"><div class="section clearfix">
+            <div id="name-and-slogan">
+                <div id="site-name">
+                    <strong>
+                    <a href="/" title="Home" rel="home"><span>Seal-Tite International</span></a>
+                    </strong>
+                </div>
+            </div> <!-- /#name-and-slogan -->
+          </div>
+
+    </div>
+  </div> <!-- /.section, /#header -->
+
+  <div id="main-wrapper" class="clearfix">
+    <div id="main" class="clearfix">
+       
+        <div id="sidebar-first" class="column sidebar">
+            <div class="section">
+                <div class="region region-sidebar-first">
+                    <div id="block-nice-menus-1" class="block block-nice-menus">
+
+<div class="content">
+    <ul class="nice-menu nice-menu-left" id="nice-menu-1">
+
+        <li class="menu-528 menuparent menu-path-node-3 odd ">@Html.ActionLink("Home", "STSplash", "Splash")
+             <ul><li class="menu-707 menu-path-node-3 first  odd ">@Html.ActionLink("Who We Are", "WhoWeAre", "Home")</li>
+                <li class="menu-303 menu-path-node-4 even ">@Html.ActionLink("Our People", "OurPeople", "Employee")</li>
+                <li class="menu-304 menu-path-node-5 odd  last ">@Html.ActionLink("News", "News", "News")</li>
+             </ul>
+        </li>
+
+        <li class="menu-528 menuparent menu-path-node-3 odd "><a href="#">Services</a>
+             <ul><li class="menu-707 menu-path-node-3 first  odd ">@Html.ActionLink("Services Overview", "ServicesOverview", "Home")</li>
+                <li class="menu-303 menu-path-node-4 even ">@Html.ActionLink("Sealant Applications", "Applications", "Home")</li>
+                <li class="menu-304 menu-path-node-5 odd  last ">@Html.ActionLink("Sealant Delivery Methods", "SealantDeliveryMethods", "Home")</li>
+             </ul>
+        </li>
+
+        <li class="menu-307 menuparent menu-path-node-8 even "><a href="#">Job Histories</a>
+            <ul>
+                <li class="menu-708 menu-path-node-8 first  odd ">@Html.ActionLink("Case Histories By Leak Type", "CaseHistories", "Home")</li>
+                <li class="menu-306 menu-path-node-7 even  last ">@Html.ActionLink("Field Proven Success Rates", "Success", "Home")</li>
+            </ul>
+        </li>
+        
+        <li class="menu-302 menuparent menu-path-node-20 odd "><a href="#">Technical Resources</a>
+            <ul>
+                <li class="menu-322 menu-path-node-20 first  odd ">@Html.ActionLink("Technical Papers", "TechnicalPapers", "Home")</li>
+                <li class="menu-323 menu-path-node-21 even ">@Html.ActionLink("Testing", "Testing", "Home")</li>
+                <li class="menu-321 menu-path-node-19 odd ">@Html.ActionLink("Material Safety Data Sheets", "MSDS", "Home")</li>
+                <li class="menu-320 menu-path-node-18 even ">@Html.ActionLink("Troubleshooting Data Sheets", "Troubleshooting", "Home")</li>
+                <li class="menu-710 menu-path-node-55 odd  last ">@Html.ActionLink("Videos and Animations", "Videos", "Home")</li>
+            </ul>
+        </li>
+    
+        <li class="menu-529 menuparent menu-path-node-50 even "><a href="#">HSE</a>
+            <ul>
+                <li class="menu-709 menu-path-node-50 first  odd ">@Html.ActionLink("Safety Overview", "safety", "Home")</li>
+                <li class="menu-704 menu-path-node-19 even  last ">@Html.ActionLink("Material Safety Data Sheets", "MSDS", "Home")</li>
+            </ul>
+        </li>
+        <li class="menu-529 menuparent menu-path-node-50 even "><a href="#">Contact</a>
+            <ul>
+                <li class="menu-709 menu-path-node-50 first  odd ">@Html.ActionLink("Locations", "Locations", "Home")</li>
+                <li class="menu-704 menu-path-node-19 even  last ">@Html.ActionLink("FAQs", "FAQ", "Home")</li>
+            </ul>
+        </li>
+
+        <li class="menu-302 menuparent menu-path-node-20 odd "><a href="#">Employee</a>
+            <ul>
+                <li class="menu-322 menu-path-node-20 first  odd "><a href="https://exg5.exghost.com/owa/auth/logon.aspx?url=https://exg5.exghost.com/owa/&reason=0">WebMail</a></li>
+                <li class="menu-323 menu-path-node-21 even "><a href="http://www.spe.org/index.php">SPE</a></li>
+                <li class="menu-321 menu-path-node-19 odd ">@Html.ActionLink("Legal", "Legal", "Home")</li>
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                            <li class="menu-320 menu-path-node-18 even last">@Html.ActionLink("Login", "Login", "Account")</li>
+                    }
+                    else
+                    {
+                            <br />
+                            <li class="menu-320 menu-path-node-18 even" >@Html.ActionLink("View Employees", "Index", "Employee", new { area = "" }, null)</li>
+                            <li class="menu-710 menu-path-node-55 odd">@Html.ActionLink("View News", "Index", "News", new { area = "" }, null)</li>
+                                
+                            <li class="menu-320 menu-path-node-18 even last">@Html.ActionLink("Logout", "LogOff", "Account", new { area = "" }, null)</li>
+                    }
+            </ul>
+        </li>
+    </ul>
+  </div>
+</div>
+  </div>
+      </div></div> <!-- /.section, /#sidebar-first -->
+
+  </div></div> <!-- /#main, /#main-wrapper -->
+
+  
+  <div id="footer-wrapper"><div class="section">
+
+        
+    <div id="block-block-1" class="block block-block">
+
+    
+  <div class="content">
+    <p>
+	Seal-Tite International<br />
+	500 Deer Cross Drive<br />
+	Madisonville, LA 70447 USA<br />
+	Phone: 1-985-875-1292<br />
+	Fax: 1-985-875-0687
+    </p>
+  </div>
+
+  </div>
+      </div> <!-- /#footer-columns -->
+    
+    <script type="text/JavaScript">        var TFN = ''; var TFA = ''; var TFI = '0'; var TFL = '0'; var tf_RetServer = "rt.trafficfacts.com"; var tf_SiteId = "5aedcdc70f2e2561ff1aebbe9bc937a1e4a7557f"; var tf_ScrServer = document.location.protocol + "//rt.trafficfacts.com/tf.php?k=5aedcdc70f2e2561ff1aebbe9bc937a1e4a7557f;c=s;v=5"; document.write(unescape('%3Cscript type="text/JavaScript" src="' + tf_ScrServer + '">%3C/script>'));</script><noscript><img src="http://rt.trafficfacts.com/ns.php?k=5aedcdc70f2e2561ff1aebbe9bc937a1e4a7557f" height="1" width="1" alt=""/></noscript>
+  </div></div> <!-- /.section, /#footer-wrapper -->
+
+</div></div><!-- /#page, /#page-wrapper -->
+  </body>
+</html>

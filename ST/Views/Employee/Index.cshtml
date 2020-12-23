@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ST.Models.Employee>
+
+@{
+    ViewBag.Title = "Employees";
+} 
+
+    <div id="dialog">
+    <div id="modalcontent">
+    </div>
+    </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        InitializeDatatable($("#employeeTable"));
+        tablesorter($("#employeeTable"));
+    });
+</script>
+
+<h2>Employees</h2>
+
+<p>
+    <input type="button" value="Add Employee" id="AddEmployeeBtn" class="btn btn-large btn-info" />
+</p>
+<br />
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered tablesorter" id="employeeTable">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>  
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            <div>Contact Email</div>
+        </th>
+        <th>
+        
+        </th>
+        <th>
+        
+        </th>
+    </tr>
+    </thead>
+   <tbody>
+@foreach (var item in Model) {
+    
+    <tr>
+        <td>
+           <font color="black"> @Html.DisplayFor(modelItem => item.Name) </font>
+        </td>
+        <td>
+           <font color="black"> @Html.DisplayFor(modelItem => item.Age)</font>
+        </td>
+        <td>
+           <font color="black"> @Html.DisplayFor(modelItem => item.ContactEmail)</font>
+        </td>
+        <td>
+        @using (Html.BeginForm())
+        {
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-small btn-warning EditEmployeeBtn" })*@
+            <input type="button" value="Edit Employee" class="EditEmployeeBtn btn btn-small btn-info" dynamicid="@Html.DisplayFor(modelItem =>item.Id)"/>
+        }
+        </td>
+        <td>
+            <input type="button" value="Delete" class="DeleteEmployeeBtn btn btn-small btn-warning" dynamicid="@Html.DisplayFor(modelItem =>item.Id)"/>
+        </td>
+    </tr>
+}
+</tbody>
+</table>

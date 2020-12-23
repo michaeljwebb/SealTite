@@ -1,0 +1,74 @@
+﻿@model ST.Models.News
+
+@{
+    ViewBag.Title = "Edit News: " + Model.Name;
+}
+
+<div class="page-header">
+	<h2>@ViewBag.Title</h2>
+</div>
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "News", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            <div>Name</div>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            <div>Information</div>
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Information)
+            @Html.ValidationMessageFor(model => model.Information)
+        </div>
+
+        <div class="editor-label">
+            <div>Image</div>
+        </div>
+        <div class="editor-field"> 
+            <img src=@Url.Content("../../UploadImagesNews/" + @Html.DisplayTextFor(model => model.Id) + ".jpg") alt="" style="width:20%; height:40%;" />
+        </div>
+        <div class="editor-label">
+            <div><b> Please select File : </b></div>
+        </div>
+        <div class="editor-field">
+            <input type="file" id="FileUpload1"   name="FileUpload1" /><br />
+        </div>
+
+        @*<div class="editor-label">
+            <div>Is Active</div>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+
+        <div class="editor-label">
+            <div>Is Deleted</div>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsDeleted)
+            @Html.ValidationMessageFor(model => model.IsDeleted)
+        </div>*@
+        <br />
+        <div>
+            <input type="submit" class="btn btn-large btn-info" value="Save and Continue" /> |
+             @Html.ActionLink("View News", "Index", "News", new { @class = "btn btn-large btn-info" })
+             @*@Html.ActionLink("Administration Panel", "AdminView", "Account", "", new { @class = "btn btn-large btn-info" })*@
+        </div>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

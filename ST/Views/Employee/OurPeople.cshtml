@@ -1,0 +1,95 @@
+﻿@model IEnumerable<ST.Models.Employee>
+
+@{
+    ViewBag.Title = "Employees";
+}
+<script src="@Url.Content("~/Scripts/sealtite.js")" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        InitializeDatatable($("#employeeTable"));
+        tablesorter($("#employeeTable"));
+    });
+</script>
+<div class="container-white shadow" style="width:100%;">
+
+<div class="container-hs">
+<h2 style="margin-left:3%;">Employees</h2>
+</div>
+<br />
+<div class="container">
+    <div class="span6 selection_area">
+        <table id="employee_table" style="border-color:#A0C34F;" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Contact Email
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="@item.Id" class="employee
+                        @if (ViewBag.id == item.Id)
+                        {
+                            @: selected
+                        }
+                    ">
+                        <td>
+                            @item.Name
+                        </td>
+                        <td>
+                            @item.ContactEmail
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <br />
+    </div>
+    <div id="user_content" class="edit_area">
+        <p id="no_selection" align="center" style="margin-top: 10px">
+            <b>Please select an employee from the table.</b></p>
+    </div>
+</div>
+
+
+
+@*<script src="../../Scripts/jquery-1.8.2.min.js"></script>
+<script src="../../Scripts/bootstrap-popover.js"></script>
+<script src="../../Scripts/bootstrap-tooltip.js"></script>
+<script src="../../Scripts/OPpopover.js"></script>
+
+<div class="container-white shadow"> 
+
+<h1>Our People</h1>
+
+<center>
+<table cellpadding="5px" cellspacing="5px">
+ <tr>
+@foreach (var item in Model) {
+        <td>
+            <div class="well">
+                @if(item.Id == 1){ <img src="../../Content/images/Employees/5.jpg" height="300px" width="230px" />}
+                else if(item.Id == 4){ <img src="../../Content/images/Employees/4.jpg" height="300px" width="230px" />}
+                else if(item.Id == 5){ <img src="../../Content/images/Employees/1.jpg" height="300px" width="230px" />}
+            </div>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name) <br />
+            <br />
+            @Html.DisplayFor(modelItem => item.Experience) Experience<br />
+            <br />
+            @Html.DisplayFor(modelItem => item.ContactEmail)<br />
+            <br />
+        </td>
+}
+
+</tr>
+</table>
+</center>
+</div>*@

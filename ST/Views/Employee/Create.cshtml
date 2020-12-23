@@ -1,0 +1,87 @@
+﻿@model ST.Models.Employee
+
+@{
+    ViewBag.Title = "Add Employee";
+}
+
+<h2>Add Employee</h2> 
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+
+        <div class="editor-label">
+            <div>Name</div>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            <div>Age</div>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Age)
+            @Html.ValidationMessageFor(model => model.Age)
+        </div>
+
+        <div class="editor-label">
+            <div>Experience</div>
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Experience)
+            @Html.ValidationMessageFor(model => model.Experience)
+        </div>
+
+        <div class="editor-label">
+            <div>Contact Email</div>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContactEmail)
+            @Html.ValidationMessageFor(model => model.ContactEmail)
+        </div>
+
+        <div class="editor-label">
+            <div><b> Please select File : </b></div>
+        </div>
+        <div class="editor-field">
+            <input type="file" id="FileUpload1"   name="FileUpload1" /><br />
+        </div>
+
+        @*<div class="editor-label">
+            <div>Is Active</div>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+
+        <div class="editor-label">
+            <div>Is Deleted</div>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsDeleted)
+            @Html.ValidationMessageFor(model => model.IsDeleted)
+        </div>
+
+        <div class="hidden-field">
+            @Html.HiddenFor(model => model.IsActive, new { IsActive = true }) 
+        </div>
+
+        <div class="hidden-field">
+            @Html.HiddenFor(model => model.IsDeleted, new { IsDeleted = false })
+        </div>*@
+<br />
+        <div>
+            <input type="submit" class="btn btn-large btn-info" value="Save and Continue" /> |
+            @Html.ActionLink("View Employees", "Index", "Employee", new { @class = "btn btn-large btn-info" })
+        </div>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

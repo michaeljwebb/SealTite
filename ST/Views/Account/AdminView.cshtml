@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Administration Panel";
+}
+
+<center>
+
+<h2>Administration Panel</h2>
+
+<button type="button" class="btn btn-large btn-block btn-info"  data-toggle="collapse" data-target="#Employee">
+  Employee
+</button>
+ 
+<div id="Employee" class="collapse out"> 
+    <br />
+   <button class="btn btn-large btn-inverse" type="button"><a href="../Employee/Index">View Employees</a></button>
+   <button class="btn btn-large btn-inverse" type="button"><a href="../Employee/Create">Add Employee</a></button>
+</div>
+
+<br />
+
+<button type="button" class="btn btn-large btn-block btn-info"  data-toggle="collapse" data-target="#News">
+  News
+</button>
+
+<div id="News" class="collapse out"> 
+    <br />
+   <button class="btn btn-large btn-inverse" type="button"><a href="../News/Index">View News</a></button>
+   <button class="btn btn-large btn-inverse" type="button"><a href="../News/Create">Add News</a></button>
+</div>
+
+</center>

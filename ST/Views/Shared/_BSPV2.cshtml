@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    @Styles.Render("~/Content/themes/base/css", "~/Content/css")
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <link href="~/Content/sealtite.css" rel="stylesheet">
+    <link href="~/Content/bootstrap-datatables.css" rel="stylesheet">
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css"/>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    <style type="text/css">
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="~/Content/bootstrap-responsive.min.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="~/Content/icons/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/Content/icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/Content/icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/Content/icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="~/Content/icons/apple-touch-icon-57-precomposed.png">
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner" style="background-image: url(../../Content/images/BarLogo4.png);">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>  
+          <a class="brand" style="color:none;" href="../Splash/STSplash">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp</a>
+         @* @Html.ActionLink("Seal-Tite", "Index", "Home", "", new { @class = "brand" })*@
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li > <a class="brand" style="color:none;" href="../Splash/STSplash">&nbsp &nbsp &nbsp &nbsp &nbsp </a>
+                    @*@Html.ActionLink("Home", "Index", "Home")*@ </li>
+              
+                  <li class="dropdown"> 
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a> 
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Who We Are", "WhoWeAre", "Home")</li>
+                        <li>@Html.ActionLink("Our People", "OurPeople", "Employee")</li>
+                        <li>@Html.ActionLink("News", "News", "News")</li>
+                    </ul>
+                  </li>
+             
+              <li class="dropdown"> 
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services<b class="caret"></b></a> 
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Services Overview", "ServicesOverview", "Home")</li>
+                        <li>@Html.ActionLink("Sealant Applications", "Applications", "Home")</li>
+                        <li>@Html.ActionLink("Sealant Delivery Methods", "SealantDeliveryMethods", "Home")</li>
+                    </ul>
+              </li>
+              <li class="dropdown"> 
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Job Histories<b class="caret"></b></a> 
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Case Histories By Leak Type", "CaseHistories", "Home")</li>
+                        <li>@Html.ActionLink("Field Proven Success Rates", "Success", "Home")</li>
+                    </ul>
+              </li>
+              <li class="dropdown"> 
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Technical Resource<b class="caret"></b></a> 
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Technical Papers", "TechnicalPapers", "Home")</li>
+                        <li>@Html.ActionLink("Testing", "Testing", "Home")</li>
+                        <li>@Html.ActionLink("Material Safety Data Sheets", "MSDS", "Home")</li>
+                        <li>@Html.ActionLink("Troubleshooting Data Sheets", "Troubleshooting", "Home")</li>
+                        <li>@Html.ActionLink("Videos and Animations", "Videos", "Home")</li>
+                    </ul>
+              </li>
+              <li class="dropdown"> 
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">HSE<b class="caret"></b></a> 
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Safety Overview", "safety", "Home")</li>
+                        <li>@Html.ActionLink("Material Safety Data Sheets", "MSDS", "Home")</li>
+                    </ul>
+              </li>
+              <li class="dropdown"> 
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact<b class="caret"></b></a> 
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Locations", "Locations", "Home")</li>
+                        <li>@Html.ActionLink("FAQs", "FAQ", "Home")</li>
+                    </ul>
+              </li>
+            
+            </ul>
+            <ul class="nav pull-right">
+                <li class="dropdown pull-right">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Employee<b class="caret"></b></a> 
+                        <ul class="dropdown-menu">
+                            <li><a href="https://exg5.exghost.com/owa/auth/logon.aspx?url=https://exg5.exghost.com/owa/&reason=0">WebMail</a></li>
+                            <li><a href="http://www.spe.org/index.php">SPE</a></li>
+                            <li>@Html.ActionLink("Legal", "Legal", "Home")</li>
+                    
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                            }
+                            else
+                            {
+                                   <br />
+                                   <li>@Html.ActionLink("View Employees", "Index", "Employee", new { area = "" }, null)</li>
+                                   <li>@Html.ActionLink("View News", "Index", "News", new { area = "" }, null)</li>
+                                
+                                   <li>@Html.ActionLink("Logout", "LogOff", "Account", new { area = "" }, null)</li>
+                            }
+                        </ul>
+                  </li>
+
+            </ul>
+  
+            @*<form class="navbar-search pull-right">
+                <input type="text" class="search-query" placeholder="Search">
+            </form>*@
+            
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="padding:30px;">
+
+    @RenderBody()
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="@Url.Content("~/Scripts/jquery-1.8.0.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-2.0.6-development-only.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-latest.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.tablesorter.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/dialog.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap-dropdownjs")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap-datatables.js")" type="text/javascript"></script>
+    @*<script src="@Url.Content("~/Scripts/sealtite.js")" type="text/javascript"></script>*@
+    <script src="@Url.Content("~/Scripts/sealtite.employees.js")" type="text/javascript"></script>
+    @Scripts.Render("~/bundles/dialog")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.dropdown-toggle').dropdown();
+            });
+   </script>
+    @RenderSection("scripts", required: false)
+
+  </body>
+</html>

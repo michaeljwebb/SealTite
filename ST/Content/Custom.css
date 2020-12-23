@@ -1,0 +1,11 @@
+﻿body {
+}
+
+.navbar-inner
+{
+    height:70px; 
+}
+.brand
+{
+  background: url(images/Bar.png) no-repeat left center;
+}

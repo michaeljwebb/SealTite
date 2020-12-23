@@ -1,0 +1,86 @@
+﻿@model ST.Models.Employee
+
+@{
+    ViewBag.Title = "Edit Employee: " + Model.Name;
+}
+<div class="page-header">
+	<h2>@ViewBag.Title</h2> 
+</div>
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            <div>Name</div>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            <div>Age</div>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Age)
+            @Html.ValidationMessageFor(model => model.Age)
+        </div>
+
+        <div class="editor-label">
+            <div>Experience</div>
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Experience)
+            @Html.ValidationMessageFor(model => model.Experience)
+        </div>
+
+        <div class="editor-label">
+            <div>Contact Email</div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContactEmail)
+            @Html.ValidationMessageFor(model => model.ContactEmail)
+        </div>
+
+        <div class="editor-label">
+            <div>Image</div>
+        </div>
+        <div class="editor-field"> 
+            <img src=@Url.Content("../../UploadImagesEmployee/" + @Html.DisplayTextFor(model => model.Id) + ".jpg") alt="" style="width:10%; height:30%;" />
+        </div>
+
+        <div class="editor-label">
+            <div><b> Please select File : </b></div>
+        </div>
+        <div class="editor-field">
+            <input type="file" id="FileUpload1"   name="FileUpload1" /><br />
+        </div>
+
+        @*<div class="editor-label">
+            <div>Is Active</div>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+
+        <div class="editor-label">
+            <div>Is Deleted</div>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsDeleted)
+            @Html.ValidationMessageFor(model => model.IsDeleted)
+        </div>*@
+        <br />
+        <div>
+            <input type="submit" class="btn btn-large btn-info" value="Save and Continue" /> |
+             @Html.ActionLink("View Employees", "Index", "Employee", new { @class = "btn btn-large btn-info" })
+        </div>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

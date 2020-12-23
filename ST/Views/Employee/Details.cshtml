@@ -1,0 +1,27 @@
+﻿@model ST.Models.Employee
+
+<fieldset>
+    @Html.HiddenFor(model => model.Id)   
+    <div class="editor-field">
+        <img src=@Url.Content("../UploadImagesEmployee/" + @Html.DisplayTextFor(model => model.Id) + ".jpg") alt="" style=" float:left; padding-right:10px; width:10%; height:30%;" />
+    </div> 
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.Name):</b>
+         @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.Age):</b>
+         @Html.DisplayFor(model => model.Age)
+    </div>
+
+    <div class="display-label">
+         <b>Contact Email:</b>
+         @Html.DisplayFor(model => model.ContactEmail)
+    </div>
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.Experience): </b>
+         @Html.DisplayFor(model => model.Experience)
+    </div>
+    <br />
+</fieldset>

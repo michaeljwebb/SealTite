@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ST.Models.News>
+
+@{
+    ViewBag.Title = "News";
+}
+
+<div class="container-white shadow">
+
+<div class="container-hs">
+<h2 style="margin-left:3%;">News</h2>
+</div>
+
+<br />
+
+<center>
+<div id="myCarousel" class="carousel slide img-rounded" style=" padding:20px; height:350px; width:600px;">  
+  <!-- Carousel items -->  
+  <div class="carousel-inner">  
+    <div class="active item"><div class="container-car"><center>
+        <table>
+            <tr>
+                <td>
+                    <center><img src="../../Content/images/logo2.png" class="img-rounded" /></center>
+                   
+                </td>
+            </tr>
+        </table></center></div></div>
+    @foreach (var item in Model)
+    {
+        <div class="item" ><div class="container-car"><center> 
+            <table>
+                <tr>
+                    <td>
+                    <center><img id="newsImg" src=@Url.Content("../../UploadImagesNews/" + @Html.DisplayTextFor(modelItem => item.Id) + ".jpg") alt="" style="float:left; padding-right:10px; width:30%; height:30%;" /></center>
+                        <br /><br />
+                      <div class="display-label">
+                        <font color="black" size="5"> <b>Event: </b> @Html.DisplayFor(modelItem => item.Name) </font>
+                            <br /><br />
+                        <font color="black" size="5"> <b>Details: </b> @Html.DisplayFor(modelItem => item.Information) </font>
+                      </div>
+                    </td>
+                </tr>
+            </table>
+    
+        </center></div></div>  
+    } 
+  </div>  
+  <!-- Carousel nav -->  
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>  
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>  
+</div>  
+</center>
+</div>
+<script type="text/javascript"> $('myCarousel').carousel('pause') </script>
+<script type="text/javascript">
+var img = document.getElementById("newsImg");
+img.onerror = function () { 
+    this.style.display = "none";
+}
+</script>

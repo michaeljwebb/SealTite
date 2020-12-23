@@ -1,0 +1,80 @@
+﻿@model IEnumerable<ST.Models.News>
+
+@{
+    ViewBag.Title = "News";
+} 
+
+    <div id="dialog">
+    <div id="modalcontent">
+    </div>
+    </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        InitializeDatatable($("#newsTable"));
+        tablesorter($("#newsTable"));
+    });
+</script>
+
+<h2>News</h2>
+
+<p>
+    <input type="button" value="Add News" id="AddNewsBtn" class ="btn btn-large btn-info" /> 
+    @*@Html.ActionLink("Administration Panel", "AdminView", "Account", "", new { @class = "btn btn-large btn-info" })*@
+</p>
+<br />
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered tablesorter" id="employeeTable">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>  
+        <th>
+            @Html.DisplayNameFor(model => model.Information)
+        </th>
+    @*  <th>
+            @Html.DisplayNameFor(model => model.ImageType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </th>*@
+        <th>
+        
+        </th>
+        <th>
+
+        </th>
+    </tr>
+    </thead>
+   <tbody>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+           <font color="black"> @Html.DisplayFor(modelItem => item.Name) </font>
+        </td>
+        <td>
+           <font color="black"> @Html.DisplayFor(modelItem => item.Information)</font>
+        </td>
+@*        <td>
+           <font color="black"> @Html.DisplayFor(modelItem => item.ImageType)</font>
+        </td>
+        <td>
+           <font color="black"> @Html.DisplayFor(modelItem => item.IsActive)</font>
+        </td>
+        <td>
+           <font color="black"> @Html.DisplayFor(modelItem => item.IsDeleted)</font>
+        </td>*@
+        <td>
+        @using (Html.BeginForm())
+        {
+              <input type="button" value="Edit News" class="EditNewsBtn btn btn-small btn-info" dynamicid="@Html.DisplayFor(modelItem =>item.Id)"/>
+        }
+        </td>
+        <td>
+            <input type="button" value="Delete" class="DeleteNewsBtn btn btn-small btn-warning" dynamicid="@Html.DisplayFor(modelItem =>item.Id)"/>
+        </td>
+    </tr>
+}
+</tbody>
+</table>

@@ -1,0 +1,60 @@
+﻿@model ST.Models.Employee
+
+@{
+    ViewBag.Title = "Delete Employee: " + Model.Name;
+}
+
+
+
+<fieldset>
+    <h3>Are you sure you want to delete this?</h3>
+    
+    <div class="display-label">
+        <b> @Html.DisplayNameFor(model => model.Name): </b> 
+         @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.Age): </b>
+         @Html.DisplayFor(model => model.Age)
+    </div>
+
+    <div class="display-label">
+        <b> @Html.DisplayNameFor(model => model.Experience):</b>
+         @Html.DisplayFor(model => model.Experience)
+    </div>
+
+    <div class="display-label">
+        <b> @Html.DisplayNameFor(model => model.ContactEmail):</b>
+         @Html.DisplayFor(model => model.ContactEmail)
+    </div>
+
+@*    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageType)
+    </div>*@
+
+@*    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsActive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsActive)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsDeleted)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsDeleted)
+    </div>*@
+    <br />
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" class="btn btn-large btn-info" value="Delete and Continue"  /> |
+         @Html.ActionLink("View Employees", "Index", "Employee", new { @class = "btn btn-large btn-info" })
+
+    </p>
+}
